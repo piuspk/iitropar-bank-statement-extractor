@@ -1,47 +1,50 @@
 # Bank Statement Extractor
 
-A simple tool to extract transaction data from bank statement PDFs and save as Excel. Works with multiple bank formats!
+A Python tool to extract transaction data from bank statement PDFs and export to Excel. Supports multiple bank formats.
 
-## What it Do? 
+## Features
 
-- Read your boring bank PDF statements 
-- Pull out all the important transaction details 
-- Save everything in nice Excel file 
-- Handle different bank formats automatically 
+- Extract transaction data from PDF bank statements  
+- Parse key details: dates, amounts, descriptions, balances  
+- Export clean Excel files with organized data  
+- Supports multiple bank formats automatically  
 
-## How to Use? 
+## Supported Banks
 
-1. Put your bank statement PDF in same folder as this script
-2. Run the script (it's Python, so you need that installed)
-3. Boom! You get `complete_bank_statement.xlsx` with all your transactions
+- Standard Indian bank statements (most major banks)  
+- Special "Operating Account Consolidated Statement" format  
 
-```bash
+## Installation
+
+1. Ensure Python 3.6+ is installed  
+2. Install required packages:  
+   ```bash
+   pip install pdfplumber pandas openpyxl
+
+##   Usage
+Place your bank statement PDF in the project folder
+
+Run the extractor:
+
+bash
+Copy
 python pdf_table_extractor.py
+Find results in complete_bank_statement.xlsx
 
-Supported Banks 
-Standard Bank Statements (most Indian banks)
+##  Known Limitations
+Poor quality scans may not be read accurately
 
-Special format for "Operating Account Consolidated Statement"
+Non-standard formats may require adjustments
 
-##  Why Use This?
-Save time from manual copy-paste 
+Requires proper date formats in source PDFs
 
-No need to pay for expensive software 
+Complex statements may miss some transactions
 
-Simple enough for non-techies to use
+##  Future Roadmap
+Add support for more bank formats
 
+Implement OCR for scanned statements
 
-##  Known Issues 
-Some PDFs might be tricky to read (but I try my best!)
+Add spending visualization features
 
-Very messy statements might miss few transactions
-
-Dates formats must be proper or it get confused
-
-
-Future Plans
-Add more bank formats support
-
-Make it work with scanned statements (OCR magic!)
-
-Maybe make pretty graphs from your spending
+Improve error handling for edge cases
